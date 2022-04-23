@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+    background-color: rgb(39, 28, 28);
+    padding: 15px 10px;
+}
+
+a h1 {
+    display: inline-block;
+    color: white;
+}
+
+a {
+    margin-right: 0;
+}

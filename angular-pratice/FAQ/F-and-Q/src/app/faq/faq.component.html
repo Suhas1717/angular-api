@@ -1,0 +1,90 @@
+<!--  -->
+<div class="container-fluid bg-light">
+    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Add New Question
+      </button>
+</div>
+<div class="container">
+    <div class="modal fade p-3" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <form [formGroup]="FormVal">
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="id" type="text " placeholder="id " aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <input formControlName="name" class="form-control" type="text " placeholder="name" aria-label="default input example ">
+                    </div>
+                    <!-- <div class="mb-3 ">
+                        <select class="form-select" formControlName="QuestionCategory" aria-label="Default select example">
+                            <option selected>Question Category</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div> -->
+                    <!-- <div class="mb-3 ">
+                        <label for="exampleFormControlTextarea1 " class="form-label ">Answer</label>
+                        <textarea formControlName="Answer " class="form-control " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                    </div> -->
+                    <div class="mb-3 ">
+                        <input class="form-control " formControlName="email" type="text " placeholder="email" aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <input class="form-control " formControlName="gender" type="text " placeholder="gender" aria-label="default input example ">
+                    </div>
+                    <!-- <div class="mb-3 ">
+                        <input class="form-control " formControlName="status" type="text " placeholder="status" aria-label="default input example ">
+                    </div> -->
+                </form>
+                <div class="modal-footer ">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="text-ceter ">
+            <h1>FAQ Details</h1>
+        </div>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th scope="col" scope="row ">Ques. ID</th>
+                    <td scope="col">Question</td>
+                    <!-- <td scope="col">Ques. Type</td>
+                <td scope="col">Answer</td> -->
+                    <td scope="col">Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dt of data ">
+                    <!-- <td (click)="editUser(dt.QuestionId) ">{{dt.QuestionId}}</td>
+                <td>{{dt.Question}}</td>
+                <td>{{dt.QuestionCategory}}</td>
+                <td>{{dt.Answer}}</td>
+                <td>{{dt.CreatedBy}}</td>
+                <td>{{dt.CreatedOn}}</td>
+                <td>{{dt.UpdatedBy}}</td> -->
+                    <td (click)="editUser(dt.id) ">{{dt.id}}</td>
+                    <td>{{dt.title}}</td>
+                    <!-- <td>{{dt.email}}</td>
+                <td>{{dt.gender}}</td>
+                <td>{{dt.status}}</td> -->
+                    <td>
+                        <button class="btn btn-primary mx-2 width:33%">Edit</button>
+                        <button class="btn btn-danger mx-2 width:33%">Delete</button>
+                        <button class="btn btn-secondary width:33%">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <ul *ngFor="let dt of data ">
+        <li>{{dt.id}}</li>
+        <li>{{dt.userId}}</li>
+        <li>{{dt.title}}</li>
+    </ul> -->
+    </div>

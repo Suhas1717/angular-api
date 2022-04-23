@@ -1,0 +1,75 @@
+<!--  -->
+<div class="container-fluid bg-light">
+    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Add New Question
+      </button>
+</div>
+<div class="container">
+    <div class="modal fade p-3" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <form [formGroup]="FormVal">
+                    <div class="mb-3">
+                        <input class="form-control" formControlName=" QuestionId " type="text " placeholder="ID " aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <input formControlName="Question " class="form-control " type="text " placeholder="User ID " aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <input formControlName="QuestionCategory " class="form-control " type="text " placeholder="User ID " aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="exampleFormControlTextarea1 " class="form-label ">Answer</label>
+                        <textarea formControlName="Answer " class="form-control " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                    </div>
+                    <div class="mb-3 ">
+                        <input class="form-control " formControlName="CreatedBy " type="text " placeholder="Default input " aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <input class="form-control " formArrayName="CreatedOn " type="datetime " placeholder="Default input " aria-label="default input example ">
+                    </div>
+                    <div class="mb-3 ">
+                        <input class="form-control " formArrayName="UpdatedBy " type="text " placeholder="Default input " aria-label="default input example ">
+                    </div>
+                </form>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-secondary " data-bs-dismiss="modal ">Close</button>
+                    <button type="button " (click)="postFaqData() " id="cancel " class="btn btn-primary ">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="text-ceter ">
+        <h1>FAQ Details</h1>
+    </div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="row ">Ques. ID</th>
+                <td>Question</td>
+                <td>Ques. Type</td>
+                <td>Answer</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dt of data ">
+                <td (click)="editUser(dt.QuestionId) ">{{dt.id}}</td>
+                <td>{{dt.Question}}</td>
+                <td>{{dt.Answer}}</td>
+                <td>
+                    <button class="btn btn-primary mx-2 ">Edit</button>
+                    <button class="btn btn-danger mx-2 fa fa-trash ">Delete</button>
+                    <button class="btn btn-secondary ">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <ul *ngFor="let dt of data ">
+        <li>{{dt.id}}</li>
+        <li>{{dt.userId}}</li>
+        <li>{{dt.title}}</li>
+    </ul> -->
+</div>

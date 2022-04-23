@@ -1,0 +1,22 @@
+li {
+    list-style-type: none;
+}
+
+button {
+    background-color: rgb(122, 154, 155);
+    text-align: center;
+    padding: 12px 0;
+    border: none;
+    color: black;
+    width: 20%;
+}
+
+button:hover {
+    background-color: aqua;
+    border-bottom: 1px solid blanchedalmond;
+    font-size: 17px;
+}
+
+.badge .name {
+    font-size: 28px;
+}

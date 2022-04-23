@@ -1,0 +1,9 @@
+{
+    "QuestionId": "1",
+    "Question": "What is java",
+    "QuestionCategory": "general",
+    "Answer": "java is a programming language",
+    "CreatedBy": "Ram",
+    "CreatedOn": "12-01-2022",
+    "UpdatedBy": "Sohan"
+}

@@ -1,0 +1,27 @@
+<div style="text-align: center; list-style-type: none;">
+    <h1>Name of countries : </h1>
+    <ul *ngFor="let country of allCountries">
+        <li>
+            <h3>Country Name: {{country.name}} and country code: {{country.code}}</h3>
+        </li>
+    </ul>
+
+    <table>
+        <tr *ngFor="let c of allCountries">
+            <th>{{c.name}}</th>
+            <td>{{c.code}}</td>
+        </tr>
+    </table>
+</div>
+<!-- <table mat-table *ngFor="let c of allCountries" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Country </th>
+        <td mat-cell *matCellDef="let element"> {{c.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{c.code}} </td>
+    </ng-container>
+</table> -->
+<app-material-table></app-material-table>

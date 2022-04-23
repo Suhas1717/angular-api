@@ -1,0 +1,15 @@
+<p>hero-details works!</p>
+<!-- Show the hero which is created in heroes.components.ts -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+
+    <div><span class="highlight">ID : </span>{{hero.id}}</div>
+    <div><span class="highlight">Name : </span>{{hero.name}}</div>
+
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    </div>
+</div>

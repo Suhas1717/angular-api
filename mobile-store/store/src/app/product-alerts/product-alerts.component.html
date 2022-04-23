@@ -1,0 +1,5 @@
+<div *ngFor="let product of product">
+    <p *ngIf="product && product.price > 700">
+        <button class="notify" type="button" (click)="notify.emit()">Notify Me</button>
+    </p>
+</div>

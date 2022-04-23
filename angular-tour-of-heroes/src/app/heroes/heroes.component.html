@@ -1,0 +1,12 @@
+<!-- Show the hero which is created in heroes.components.ts -->
+<h2>
+    <ul>
+        <li *ngFor="let hero of heroes">
+            <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+                <span class="badge">{{hero.id}}</span>
+                <span class="name">{{hero.name}}</span>
+            </button>
+        </li>
+    </ul>
+</h2>
+<app-hero-details [hero]="selectedHero"></app-hero-details>
