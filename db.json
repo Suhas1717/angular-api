@@ -1,0 +1,146 @@
+{
+    "posts": [{
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        },
+        {
+            "id": 2,
+            "userid": "",
+            "author": "dsad"
+        },
+        {
+            "QuestionId": 0,
+            "QuestionCategory": "general",
+            "Answer": "java is a programming language",
+            "CreatedBy": "Ram",
+            "UpdatedBy": "Sohan",
+            "id": 3
+        },
+        {
+            "QuestionId": "234",
+            "Question": "Whats the time?",
+            "QuestionCategory": "",
+            "Answer": "its 5 ",
+            "CreatedBy": "General",
+            "UpdatedBy": "Lorem ipsum",
+            "id": 4
+        },
+        {
+            "QuestionId": "24",
+            "Question": "What are you doing?",
+            "QuestionCategory": "",
+            "Answer": "sda",
+            "CreatedBy": "gen",
+            "UpdatedBy": "dsada",
+            "id": 5
+        },
+        {
+            "QuestionId": "34",
+            "Question": "Whats going on..?",
+            "QuestionCategory": "",
+            "Answer": "dfssf",
+            "CreatedBy": "fdsf",
+            "UpdatedBy": "fdsf",
+            "id": 6
+        },
+        {
+            "QuestionId": "324",
+            "Question": "Wlasd",
+            "QuestionCategory": "",
+            "Answer": "klkf",
+            "CreatedBy": "kldfs",
+            "UpdatedBy": "ldskf",
+            "id": 7
+        },
+        {
+            "QuestionId": "432",
+            "Question": "dadsad",
+            "QuestionCategory": "",
+            "Answer": "dsfsd",
+            "CreatedBy": "dsad",
+            "UpdatedBy": "dsad",
+            "id": 8
+        },
+        {
+            "QuestionId": "4432",
+            "Question": "sd fdfds",
+            "QuestionCategory": "",
+            "Answer": "das das",
+            "CreatedBy": "d asd",
+            "UpdatedBy": " asd",
+            "id": 9
+        },
+        {
+            "QuestionId": "434",
+            "Question": "sdasd",
+            "QuestionCategory": "",
+            "Answer": "sad as",
+            "CreatedBy": "dasdas",
+            "UpdatedBy": "dasdas",
+            "id": 10
+        },
+        {
+            "QuestionId": "32423",
+            "Question": "edasd",
+            "QuestionCategory": "",
+            "Answer": "dasdas",
+            "CreatedBy": "dsadas",
+            "UpdatedBy": "dasdas",
+            "id": 11
+        },
+        {
+            "QuestionId": "23424",
+            "Question": "dsajdljas",
+            "QuestionCategory": "",
+            "Answer": "dsfaf",
+            "CreatedBy": "dsadas",
+            "UpdatedBy": "dasdasd",
+            "id": 12
+        },
+        {
+            "QuestionId": "4234",
+            "Question": "hjhdkas",
+            "QuestionCategory": "",
+            "Answer": "kjlkjf",
+            "CreatedBy": "jklfjdslk",
+            "UpdatedBy": "jkdsjflsk",
+            "id": 13
+        },
+        {
+            "QuestionId": "1414",
+            "Question": "dasdas",
+            "QuestionCategory": "",
+            "Answer": "dsda",
+            "CreatedBy": "dsadsa",
+            "UpdatedBy": "dasda",
+            "id": 14
+        },
+        {
+            "QuestionId": "79879",
+            "Question": "dsfdsf",
+            "QuestionCategory": "",
+            "Answer": "kldfk;ls",
+            "CreatedBy": "kl;dskf;",
+            "UpdatedBy": "klkdf;sl",
+            "id": 15
+        },
+        {
+            "QuestionId": "890",
+            "Question": "sadkajda",
+            "QuestionCategory": "",
+            "Answer": "kjfdklsfj",
+            "CreatedBy": "kjdsjflk",
+            "UpdatedBy": "kdsjfl",
+            "id": 16
+        }
+    ],
+    "comments": [{
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+    }],
+    "profile": {
+        "name": "typicode"
+    }
+}

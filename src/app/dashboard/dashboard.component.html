@@ -1,0 +1,80 @@
+<div class="container-fluid bg-light">
+    <button (click)="showAddBtn()" type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Add New Question
+    </button>
+</div>
+<div class="container">
+    <div class="modal fade p-3" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <form [formGroup]="FormVal">
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="id" type="text" placeholder="ID">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="Question" type="text" placeholder="Question">
+                    </div>
+                    <div class="form-floating my-3">
+                        <textarea class="form-control" formControlName="Answer" placeholder="Answer" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Answer</label>
+                    </div>
+                    <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                    <div class="mb-3">
+                        <!-- <input class="form-control" formControlName="QuestionCategory" type="text" placeholder="QuestionCategory"> -->
+                        <select class="form-select" aria-label="Default select example" formControlName="QuestionCategory">
+                            <option selected>General</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                    <div class="form-floating my-3">
+                        <textarea class="form-control" formControlName="CreatedBy" placeholder="CreatedBy" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Created By</label>
+                    </div>
+                    <!-- <div class="form-floating my-3">
+                        <textarea class="form-control" formControlName="UpdatedBy" placeholder="UpdatedBy" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">UpdatedBy</label>
+                    </div> -->
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+                    <button type="button" *ngIf="btnSave" class="btn btn-primary" (click)="postAllData()">Save</button>
+                    <button type="button" *ngIf="btnUpdate" class="btn btn-primary" (click)="updateRecord()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" container-fluid ">
+    <div class="text-ceter ">
+        <h1>FAQ Details</h1>
+    </div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <td scope="col ">Ques. ID</td>
+                <td scope="col ">Question</td>
+                <td scope="col ">Answer</td>
+                <td scope="col ">Created By</td>
+                <!-- <td scope="col ">Updated By</td> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of getData ">
+                <td (click)="getID(d.id) ">{{d.id}}</td>
+                <td>{{d.Question}}</td>
+                <td>{{d.Answer}}</td>
+                <td>{{d.CreatedBy}}</td>
+                <!-- <td>{{d.UpdatedBy}}</td> -->
+                <td>
+                    <button type="button" (click)="editRecord(d)" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                    <button class="btn btn-danger " (click)="deleteRecord(d.id) ">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
