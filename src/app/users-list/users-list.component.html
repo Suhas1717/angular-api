@@ -1,0 +1,64 @@
+<div class=" container-fluid ">
+    <div class="text-ceter ">
+        <h1>Users List</h1>
+    </div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <td scope="col ">User Name</td>
+                <td scope="col ">Full Name</td>
+                <td scope="col ">Email</td>
+                <td scope="col ">Phone Number</td>
+                <td scope="col">Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of userList ">
+                <td>{{list.userName}}</td>
+                <td>{{list.firstName +' '+ list.lastName }}</td>
+                <td>{{list.email}}</td>
+                <td>{{list.phoneNumber}}</td>
+                <td>
+                    <button type="button " class="btn btn-primary mx-2 " data-bs-toggle="modal " data-bs-target="#exampleModal ">Edit</button>
+                    <button class="btn btn-danger ">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <div class="modal fade p-3" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <form [formGroup]="userListForm">
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="userName" type="text" placeholder="User name">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="firstName" type="text" placeholder="First Name">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="lastName" type="text" placeholder="Last Name">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="email" type="text" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="phoneNumber" type="text" placeholder="Phone Number">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" formControlName="firstName" type="text" placeholder="Question">
+                    </div>
+                    <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" *ngIf="btnSave" class="btn btn-primary" (click)="postAllData()">Save</button>
+                    <button type="button" *ngIf="btnUpdate" class="btn btn-primary" (click)="updateRecord()">Update</button> -->
+                </div>
+            </div>
+        </div>
+    </div>

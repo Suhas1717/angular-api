@@ -1,0 +1,40 @@
+<div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="w-50">
+            <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                    <div class="">
+                        <div class="card-body p-md-5 mx-md-4">
+                            <form>
+                                <p>Please login to your account</p>
+                                <div class="form-outline mb-4">
+                                    <input type="email" name="userName" id=" form2Example11 " class="form-control " placeholder="Enter a user name">
+                                    <label class="form-label " for="form2Example11 ">User name</label>
+                                </div>
+
+                                <div class="form-outline mb-4 ">
+                                    <input type="password " name="password" id="form2Example22 " class="form-control " />
+                                    <label class="form-label " for="form2Example22 ">Password</label>
+                                </div>
+
+                                <div class="text-center pt-1 mb-5 pb-1 ">
+                                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 " name="login" type="button" (click)="login()">
+                                        Log in
+                                    </button><br>
+                                    <a class="text-muted " href="#! ">Forgot password?</a>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-center pb-4 ">
+                                    <p class="mb-0 me-2 ">Don't have an account?</p>
+                                    <button type="button " class="btn btn-outline-danger" (click)="createNewUser()">Create New</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

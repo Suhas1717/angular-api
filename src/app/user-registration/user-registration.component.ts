@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { UserModel } from './user.model';
 import { UserApiService } from '../user-api.service';
-import { first } from 'rxjs';
+import { first, max } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-registration',
@@ -10,31 +11,37 @@ import { first } from 'rxjs';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-
   userForm!: FormGroup;
   userModel: UserModel = new UserModel();
   num:number = 1;
   data:any = '';
-  constructor(private formBuild: FormBuilder, private userApi:UserApiService) { }
+
+  constructor(private formBuild: FormBuilder, private userApi:UserApiService, private route: Router) { 
+   
+  }
 
   ngOnInit(): void {
-     ///////user model/////////////
-     this.userForm = this.formBuild.group({
-      id:[''],
-      userName:[''],
-      firstName:['', Validators.required],
-      lastName:['', Validators.required],
-      email:['', Validators.required],
-      phoneNumber:['', Validators.required],
-      password:['', Validators.required],
-    }) 
 
+  ///////user model/////////////
+  
+  this.userForm = this.formBuild.group({
+       id:[''],
+      userName:['', [Validators.required, Validators.min(6), Validators.max(20)]],
+      firstName:['', [Validators.required, Validators.min(2), Validators.max(50)]],
+      lastName:['', [Validators.required, Validators.min(2), Validators.max(50)]],
+      email: ['', [Validators.compose([Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")])]],
+
+      // email: ['', Validators.compose([Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")])],
+      phoneNumber:['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      password:['', [Validators.required, Validators.minLength(4), Validators.maxLength(16)]],
+      c_pass:['', [Validators.required]]
+    }) 
     }
 
+////////////////////////////
+//////// validation ////////
+///////////////////////////
 
-    ////////////////////////
-    ////// validation //////
-    ///////////////////////
     get firstNameValidation(){
       return this.userForm.get('firstName');
     }
@@ -54,9 +61,9 @@ export class UserRegistrationComponent implements OnInit {
       return this.userForm.get('password');
 }
 
-    //////////////////////////////////
-    ////////// Post user data ////////
-    //////////////////////////////////
+//////////////////////////////////
+////////// Post user data ////////
+//////////////////////////////////
 
     postUserData(){
       //this.userModel.id = this.userForm.value.id;
@@ -69,14 +76,28 @@ export class UserRegistrationComponent implements OnInit {
 
       console.log(this.userModel.userName)
 
+
+//////////////////////////////////////////////////////
+////////// error handling and validation check //////
+/////////////////////////////////////////////////////
+
+      if(this.userForm.valid){
       this.userApi.postUser(this.userModel)
       .subscribe(res=>{
          console.log();
          alert("User Saved")
       })
-    }
+    } else{
+      alert('Invalid form');
+      this.userForm.reset();
+    }   
+  }
 
-    
-    
+  passValidation(){
+    let pass = document.getElementById('password');
+    let c_pass = document.getElementById('c_pass');
+    console.log(pass);
+  }
+
 }
 
