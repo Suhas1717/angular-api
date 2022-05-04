@@ -1,0 +1,13 @@
+<h1 appCustom>Hover mouse over on me</h1>
+
+<h3>Choose a color</h3>
+
+<div>
+    <input type="radio" name="color" (click)="color='tomato'">Red
+    <input type="radio" name="color" (click)="color='green'">Green
+    <input type="radio" name="color" (click)="color='magenta'">Magenta
+</div>
+
+<p [appCustom]='color' defaultColor="yellow">This paragraph is Highlighted using @Input</p>
+
+<h3 ngNonBindable [appCustom]="color">{{ 50 + 52 }} this was suppose to be 102 but ngNonBindable deactivates interpolation, binding and directives,<br> but we added 'appCustom' directive to line hence will be Highlighted</h3>
