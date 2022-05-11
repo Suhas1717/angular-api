@@ -1,0 +1,22 @@
+[{
+        "qId": 101,
+        "question": "Where is Pune",
+        "questionCategory": "General Trivia",
+        "createdOn": "10-06-2022",
+        "createdBy": "Shad"
+    },
+    {
+        "qId": 102,
+        "question": "Whats your fav color?",
+        "questionCategory": "Genearal",
+        "createdOn": "23-04-2022",
+        "createdBy": "Admin"
+    },
+    {
+        "qId": 0,
+        "question": "Whats your fav game",
+        "questionCategory": "General",
+        "createdOn": null,
+        "createdBy": null
+    }
+]
