@@ -5,11 +5,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { DashboradResolveResolver } from './resovlers/dashborad-resolve.resolver';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: UserRegistrationComponent },
-  { path:'dashboard', component : DashboardComponent, canActivate:[AuthGuard]},
+  { path:'dashboard', component : DashboardComponent, canActivate:[AuthGuard], resolve:{ DashboradResolveResolver }},
   { path: 'userList', component:UsersListComponent, canActivate:[AuthGuard]},
   { path: '', redirectTo:'login', pathMatch:'full'},
   

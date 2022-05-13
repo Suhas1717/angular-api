@@ -47,8 +47,16 @@ export class LoginComponent implements OnInit {
   get form() {
     return this.loginForm.controls
   }
-  
-  login(){    
+
+ ///////////////////////////////////
+ ////////////// Login //////////////
+ /////////////////////////////////// 
+  login(): void{ 
+    // this.authService.loginUser(this.userData)
+    // .subscribe(
+    //   res => console.log(res)
+    // )
+    
     if(this.loginForm.invalid){
       alert('Invalid username and password');
       console.log(this.userData)

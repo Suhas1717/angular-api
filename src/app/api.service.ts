@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IQuestionRequestPayload, IQuestionResponsePayload } from './interfaces/question.interface';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -13,8 +12,7 @@ export class ApiService {
    
    }
 
-// quseURL = 'http://localhost:3000/questions'
-// quseURL = 'http://localhost:3000/questions'
+//  quseURL = 'http://localhost:3000/questions/'
 
 api_url = environment.api_url;
 
@@ -31,19 +29,20 @@ api_url = environment.api_url;
 
 postData(data:IQuestionRequestPayload){
   const quseURL = '/question';
+  // return this.http.post<any>(this.quseURL, data)
   return this.http.post<any>(this.api_url+quseURL, data)
-  .pipe(map((res:IQuestionResponsePayload)=>{
-    return resizeBy;
-  }))
+  // .pipe(map((res:IQuestionResponsePayload)=>{
+  //   return res;
+  // }))
 }
 
-getData(){
-  const quseURL = '/questions';
-  return this.http.get<any>(this.api_url+quseURL)
+getData():Observable<any>{
+const quseURL = '/questions'; 
+ return this.http.get<IQuestionRequestPayload[]>(this.api_url+quseURL) 
   // return this.http.get<any>(this.quseURL)
-  .pipe(map((res:IQuestionResponsePayload[])=>{
-    return res;
-  }))
+  // .pipe(map((res:IQuestionResponsePayload[])=>{
+  //   return res;
+  // }))
 }
 
 deleteData(id:number){

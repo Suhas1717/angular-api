@@ -9,12 +9,22 @@
                                 <h5 class="p-3 text-center">Please login to your account</h5>
                                 <div class="form-outline mb-4">
                                     <label class="form-label " for="form2Example11 ">User name</label>
-                                    <input type="email" formControlName="userid" name="userName" id=" form2Example11 " class="form-control " placeholder="Enter a user name">
+                                    <input type="email" formControlName="userid" name="userid" id=" form2Example11 " class="form-control " placeholder="Enter a user name">
                                 </div>
                                 <div class="form-outline mb-4 ">
                                     <label class="form-label " for="form2Example22 ">Password</label>
                                     <input type="password" formControlName="password" name="password" id="form2Example22 " class="form-control " placeholder="Enter a user password" />
                                 </div>
+                                <div class="alert alert-danger" *ngIf="userIdValidation.touched 
+                                && userIdValidation.invalid  
+                                && userIdValidation.errors
+                                || passwordValidation.touched 
+                                && passwordValidation.invalid 
+                                && passwordValidation.errors">
+                                    Please enter valid credentials
+                                </div>
+                                <!-- <span class="text-danger" *ngIf="userIdValidation && userIdValidation.invalid && userIdValidation.touched && userIdValidation.errors">Please enter valid user name and password</span>
+                                <span class="text-danger" *ngIf="passwordValidation && passwordValidation.invalid && passwordValidation.touched && passwordValidation.errors">Please</span> -->
 
                                 <div class="text-center pt-1 mb-5 pb-1 ">
                                     <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 " name="login" type="button" (click)="login()">

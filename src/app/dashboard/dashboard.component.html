@@ -18,8 +18,13 @@
                         <label for="floatingTextarea">ID</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" formControlName="Question" type="text" placeholder="Question"></textarea>
+                        <textarea class="form-control" formControlName="Question" type="text" placeholder="Question" name="Question"></textarea>
                         <label for="floatingTextarea">Question</label>
+                        <div *ngIf="questionValidation.invalid && questionValidation.touched">
+                            <div class="alert alert-danger" *ngIf="questionValidation.errors?.['required']">Question cannot be blank</div>
+                            <div class="alert alert-danger" *ngIf="questionValidation.errors?.['minlength']">Question should have minimum 20 characters</div>
+                            <div class="alert alert-danger" *ngIf="questionValidation.errors?.['maxlength']">Question should have maximum 60 characters</div>
+                        </div>
                     </div>
                     <!-- <div class="form-floating my-3">
                         <textarea class="form-control" formControlName="Answer" placeholder="Answer" id="floatingTextarea"></textarea>
@@ -27,20 +32,30 @@
                     </div> -->
                     <div class="mb-3">
                         <!-- <input class="form-control" formControlName="QuestionCategory" type="text" placeholder="QuestionCategory"> -->
-                        <select class="form-select" aria-label="Default select example" formControlName="QuestionCategory">
+                        <select class="form-select" aria-label="Default select example" formControlName="QuestionCategory" name="QuestionCategory">
                             <option selected>General</option>
                             <option value="Trivia">Personal</option>
                             <option value="Category 3">Sports 3</option>
                             <option value="Category 4">Trivia 4</option>
                         </select>
+                        <div *ngIf="quesCatValidation.invalid && quesCatValidation.touched">
+                            <div class="alert alert-danger" *ngIf="quesCatValidation.errors?.['required']">Question category cannot be blank</div>
+                            <!-- <div class="alert alert-danger" *ngIf="quesCatValidation.errors?.['minlength']">Question should have minimum 20 characters</div>
+                            <div class="alert alert-danger" *ngIf="quesCatValidation.errors?.['maxlength']">Question should have maximum 60 characters</div> -->
+                        </div>
                     </div>
                     <div class="form-floating my-3">
-                        <textarea class="form-control" formControlName="CreatedBy" placeholder="CreatedBy" id="floatingTextarea"></textarea>
+                        <textarea class="form-control" formControlName="CreatedBy" placeholder="CreatedBy" id="floatingTextarea" name="CreatedBy"></textarea>
                         <label for="floatingTextarea">Created By</label>
+                        <div *ngIf="createdByValidation.invalid && createdByValidation.touched">
+                            <div class="alert alert-danger" *ngIf="createdByValidation.errors?.['required']">Created by cannot be blank </div>
+                            <!-- <div class="alert alert-danger" *ngIf="quesCatValidation.errors?.['minlength']">Question should have minimum 20 characters</div>
+                            <div class="alert alert-danger" *ngIf="quesCatValidation.errors?.['maxlength']">Question should have maximum 60 characters</div> -->
+                        </div>
                     </div>
-                    <div class="form-floating my-3">
+                    <!-- <div class="form-floating my-3">
                         <textarea formControlName="currentDate" type="input" [value]="currentDate" class="form-control" readonly></textarea>
-                    </div>
+                    </div> -->
                     <!-- <div class="form-floating my-3">
                         <textarea type="input" [value]="currentDate" class="form-control" readonly></textarea>
                     </div> -->
