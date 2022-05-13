@@ -82,7 +82,7 @@ get createdByValidation(){
         question : this.FormVal.value.Question,
         questionCategory: this.FormVal.value.QuestionCategory,
         createdBy:this.FormVal.value.CreatedBy,
-        createdOn: this.FormVal.value.currentDate,
+        createdOn: this.currentDate
      }
      console.log(payload)
      if(this.FormVal.valid){
@@ -143,7 +143,7 @@ get createdByValidation(){
         question : this.FormVal.value.Question,
         questionCategory: this.FormVal.value.QuestionCategory,
         createdBy:this.FormVal.value.CreatedBy,
-        createdOn:this.FormVal.value.createdOn
+        createdOn:this.FormVal.value.currentDate
      }      
       this.api.updateData(payload, payload.qId)
       .subscribe(res=>{
